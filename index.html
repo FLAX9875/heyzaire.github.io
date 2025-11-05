@@ -5,74 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zaire</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Zaire</h1>
-            <p class="tagline">Developer & Creative Thinker</p>
-        </header>
+        <!-- Top left GitHub link -->
+        <a href="https://github.com/heyzaire" class="github-corner" target="_blank">heyzaire.github.io</a>
 
-        <main>
-            <section class="intro">
-                <p>Hello! I'm Zaire, a passionate developer who loves building things with code. This is my digital space where I share my projects, thoughts, and journey.</p>
-            </section>
-
-            <section class="links">
-                <div class="link-grid">
-                    <a href="https://github.com/yourusername" class="link-card" target="_blank">
-                        <div class="link-icon">📁</div>
-                        <div class="link-content">
-                            <h3>GitHub</h3>
-                            <p>My code repositories and projects</p>
-                        </div>
+        <!-- Main content -->
+        <main class="home-page active" id="home-page">
+            <div class="hero-section">
+                <h1 class="main-title">hey, i'm <span class="name">Zaire</span></h1>
+                <p class="description">Highschool Freshman looking to work for cybersecurity, and curious to learn more.</p>
+                
+                <div class="button-row">
+                    <a href="https://github.com/heyzaire" class="social-btn" target="_blank">
+                        <span class="btn-icon">[ ]</span>
+                        <span class="btn-text">github</span>
                     </a>
-
-                    <a href="#" class="link-card" id="blog-link">
-                        <div class="link-icon">📝</div>
-                        <div class="link-content">
-                            <h3>Blog</h3>
-                            <p>Thoughts on development and life</p>
-                        </div>
-                    </a>
-
-                    <a href="mailto:your.email@example.com" class="link-card">
-                        <div class="link-icon">✉️</div>
-                        <div class="link-content">
-                            <h3>Contact</h3>
-                            <p>Get in touch with me</p>
-                        </div>
-                    </a>
-
-                    <a href="#" class="link-card" id="projects-link">
-                        <div class="link-icon">💼</div>
-                        <div class="link-content">
-                            <h3>Projects</h3>
-                            <p>My work and creations</p>
-                        </div>
+                    <a href="#" class="social-btn" id="discord-btn">
+                        <span class="btn-icon">[ ]</span>
+                        <span class="btn-text">discord</span>
                     </a>
                 </div>
-            </section>
 
-            <section class="blog-posts" id="blog-posts" style="display: none;">
-                <h2>Latest Posts</h2>
-                <div class="posts-grid" id="posts-container">
-                    <!-- Blog posts will be loaded here -->
-                </div>
-            </section>
+                <a href="#" class="blog-btn" id="read-blog-btn">
+                    <span class="blog-btn-text">Read my blog</span>
+                </a>
 
-            <section class="projects" id="projects" style="display: none;">
-                <h2>My Projects</h2>
-                <div class="projects-grid" id="projects-container">
-                    <!-- Projects will be loaded here -->
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <div class="stat-title">Scrobbled</div>
+                        <div class="stat-value">--</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-title">Last Commit</div>
+                        <div class="stat-value" id="last-commit">--</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-title">Latest Post</div>
+                        <div class="stat-value" id="latest-post">--</div>
+                    </div>
                 </div>
-            </section>
+            </div>
         </main>
 
-        <footer>
-            <p>&copy; 2024 Zaire. Built with passion.</p>
-        </footer>
+        <!-- Blog Page (hidden initially) -->
+        <main class="blog-page" id="blog-page">
+            <div class="blog-content">
+                <h2>Blog Posts</h2>
+                <div class="blog-posts" id="blog-posts-container">
+                    <!-- Blog posts will be loaded here -->
+                </div>
+            </div>
+        </main>
+
+        <!-- Archives Page (hidden initially) -->
+        <main class="archives-page" id="archives-page">
+            <div class="archives-content">
+                <h2>Archives</h2>
+                <div class="archives-list" id="archives-container">
+                    <!-- Archives will be loaded here -->
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-btn active" data-page="home">Home</button>
+            <button class="nav-btn" data-page="blog">Blog</button>
+            <button class="nav-btn" data-page="archives">Archives</button>
+        </nav>
+    </div>
+
+    <!-- Discord Modal -->
+    <div class="modal" id="discord-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Discord</h3>
+            <p>Add me on Discord: <strong>zaire#0000</strong></p>
+            <button class="copy-btn" id="copy-discord">Copy Username</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
