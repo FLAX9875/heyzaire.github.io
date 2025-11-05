@@ -1,1 +1,170 @@
+:root {
+  --bg-color: #0a0a0a;
+  --text-color: #ffffff;
+  --accent: #ffffff;
+  --transition: 0.6s ease;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  transition: background-color var(--transition), color var(--transition);
+  overflow: hidden;
+}
+
+/* Light mode */
+body.light-mode {
+  --bg-color: #f0f0f0;
+  --text-color: #0a0a0a;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease forwards;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.top-link {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s;
+}
+
+.top-link:hover {
+  opacity: 0.7;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.theme-toggle:hover {
+  transform: rotate(20deg);
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-top: 100px;
+  letter-spacing: 2px;
+  font-family: 'Courier New', monospace;
+  position: relative;
+}
+
+.blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.subtitle {
+  margin: 15px auto 40px;
+  font-size: 1.1rem;
+  color: #c7c7c7;
+  max-width: 500px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.btn {
+  border: 1px solid var(--accent);
+  padding: 10px 30px;
+  border-radius: 30px;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.btn:hover {
+  background-color: var(--accent);
+  color: var(--bg-color);
+}
+
+.read-btn {
+  display: inline-block;
+  margin-top: 15px;
+  border: 1px solid var(--accent);
+  padding: 12px 40px;
+  border-radius: 30px;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.read-btn:hover {
+  background-color: var(--accent);
+  color: var(--bg-color);
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 60px;
+}
+
+.stat-btn {
+  background: transparent;
+  border: 1px solid var(--accent);
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: var(--text-color);
+  transition: background 0.4s;
+  cursor: pointer;
+}
+
+.stat-btn:hover {
+  background: var(--accent);
+  color: var(--bg-color);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  background: transparent;
+}
+
+footer img {
+  width: 28px;
+  filter: brightness(100%);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+footer img:hover {
+  transform: scale(1.2);
+  filter: brightness(200%);
+}
 
