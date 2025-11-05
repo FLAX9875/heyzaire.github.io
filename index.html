@@ -9,41 +9,37 @@
 </head>
 <body>
   <header class="site-header">
-    <!-- top-left link goes to your GitHub profile -->
     <a class="site-link" href="https://github.com/FLAX9875" target="_blank" rel="noopener">heyzaire.github.io</a>
 
-    <!-- theme toggle (animated) -->
     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
       <img id="theme-icon" src="assets/icons/moon.svg" alt="theme icon">
     </button>
   </header>
 
-  <main class="main-content">
+  <main class="main-wrap">
     <section class="hero fade-in">
-      <h1 id="animated-heading" class="alive-heading">hey, i'm zaire</h1>
+      <h1 id="alive-heading" class="alive-heading">hey, i'm zaire</h1>
       <p class="description">Highschool Freshman looking to work for cybersecurity, and curious to learn more.</p>
 
       <div class="cta-row">
-        <a class="cta-btn outline" href="https://github.com/FLAX9875" target="_blank" rel="noopener">github</a>
-        <a class="cta-btn outline" href="https://discord.com/users/879910353239162921" target="_blank" rel="noopener">discord</a>
+        <a class="cta outline" href="https://github.com/FLAX9875" target="_blank" rel="noopener">github</a>
+        <a class="cta outline" href="https://discord.com/users/879910353239162921" target="_blank" rel="noopener">discord</a>
       </div>
 
       <a class="read-blog" href="blog.html">read my blog →</a>
 
-      <div class="stats-row">
-        <button class="stat outline">SCROBBLED <span class="stat-value" id="scrobble">loading...</span></button>
-        <button class="stat outline">LAST COMMIT <span class="stat-value" id="last-commit">—</span></button>
-        <button class="stat outline">LATEST POST <span class="stat-value" id="latest-post">—</span></button>
+      <div class="stats-row" aria-label="site indicators">
+        <div class="stat outline"><span class="stat-label">SCROBBLED</span><span id="scrobble" class="stat-value">—</span></div>
+        <div class="stat outline"><span class="stat-label">LAST COMMIT</span><span id="last-commit" class="stat-value">—</span></div>
+        <div class="stat outline"><span class="stat-label">LATEST POST</span><span id="latest-post" class="stat-value">—</span></div>
       </div>
     </section>
   </main>
 
-  <!-- bottom nav (fixed) -->
-  <nav class="bottom-nav" role="navigation" aria-label="Main navigation">
-    <a href="index.html" class="nav-btn" aria-label="Home"><img src="assets/icons/home.svg" alt="home"></a>
-    <a href="blog.html" class="nav-btn" aria-label="Blog"><img src="assets/icons/blog.svg" alt="blog"></a>
-    <a href="archive.html" class="nav-btn" aria-label="Archive"><img src="assets/icons/archive.svg" alt="archive"></a>
+  <nav class="bottom-nav" role="navigation" aria-label="Main">
+    <a class="nav-btn" href="index.html" aria-label="Home"><img src="assets/icons/home.svg" alt="home icon"></a>
+    <a class="nav-btn" href="blog.html" aria-label="Blog"><img src="assets/icons/blog.svg" alt="blog icon"></a>
+    <a class="nav-btn" href="archive.html" aria-label="Archive"><img src="assets/icons/archive.svg" alt="archive icon"></a>
   </nav>
-
 </body>
 </html>
