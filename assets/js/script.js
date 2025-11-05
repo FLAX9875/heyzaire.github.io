@@ -1,4 +1,4 @@
-// Theme toggle (dark/light mode)
+// ---------------- DARK/LIGHT THEME TOGGLE ----------------
 const themeToggle = document.getElementById("theme-toggle");
 const themeIcon = document.getElementById("theme-icon");
 
@@ -14,9 +14,8 @@ themeToggle.addEventListener("click", () => {
   localStorage.setItem("theme", isLight ? "light" : "dark");
 });
 
-// Fade-in animation on scroll
+// ---------------- FADE-IN ANIMATION ----------------
 const fadeElems = document.querySelectorAll(".fade-in");
-
 const appearOptions = {
   threshold: 0.2,
   rootMargin: "0px 0px -50px 0px",
@@ -33,4 +32,3 @@ const appearOnScroll = new IntersectionObserver((entries, observer) => {
 fadeElems.forEach((el) => {
   appearOnScroll.observe(el);
 });
-
