@@ -1,5 +1,4 @@
-// Placeholder for blog animations
+// scripts/blog.js
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("Blog ready — add posts here later.");
+  // Blog script placeholder (you'll add dynamic code here later)
 });
-
