@@ -12,46 +12,47 @@
 <body>
   <header class="site-header">
     <a class="site-link" href="https://github.com/FLAX9875" target="_blank">heyzaire.github.io</a>
-    <button id="theme-toggle" class="theme-toggle"><img id="theme-icon" src="assets/icons/moon.svg" alt="theme"></button>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+      <img id="theme-icon" src="assets/icons/moon.svg" alt="theme icon">
+    </button>
   </header>
 
-  <main class="main-content">
-    <section class="fade-in archive-section">
+  <main class="main-wrap">
+    <section class="archive-section fade-in">
       <h1 class="alive-heading">Archive</h1>
-      <p class="description">Double-click a folder to open it. (Empty for now.)</p>
+      <p class="description">Double-click a folder to open it (empty for now).</p>
 
-      <div class="folders-row">
+      <div class="folders-row" aria-hidden="false">
         <div class="folder" data-key="music">
-          <img src="assets/icons/folder.svg" alt="folder" class="folder-svg">
+          <img class="folder-svg" src="assets/icons/folder.svg" alt="Music folder">
           <div class="folder-label">Music</div>
         </div>
 
         <div class="folder" data-key="git">
-          <img src="assets/icons/folder.svg" alt="folder" class="folder-svg">
+          <img class="folder-svg" src="assets/icons/folder.svg" alt="Git folder">
           <div class="folder-label">Git</div>
         </div>
 
         <div class="folder" data-key="gallery">
-          <img src="assets/icons/folder.svg" alt="folder" class="folder-svg">
+          <img class="folder-svg" src="assets/icons/folder.svg" alt="Gallery folder">
           <div class="folder-label">Gallery</div>
         </div>
       </div>
 
-      <!-- overlay -->
       <div id="folderOverlay" class="folder-overlay" aria-hidden="true">
         <div class="folder-panel">
           <button id="closeOverlay" class="close-overlay" aria-label="Close">×</button>
           <h2 id="overlayTitle"></h2>
-          <p class="description">This folder is empty for now. Add files later in the archive.</p>
+          <p class="description">This folder is empty for now — add items later.</p>
         </div>
       </div>
     </section>
   </main>
 
   <nav class="bottom-nav">
-    <a href="index.html" class="nav-btn"><img src="assets/icons/home.svg" alt=""></a>
-    <a href="blog.html" class="nav-btn"><img src="assets/icons/blog.svg" alt=""></a>
-    <a href="archive.html" class="nav-btn"><img src="assets/icons/archive.svg" alt=""></a>
+    <a class="nav-btn" href="index.html"><img src="assets/icons/home.svg" alt=""></a>
+    <a class="nav-btn" href="blog.html"><img src="assets/icons/blog.svg" alt=""></a>
+    <a class="nav-btn" href="archive.html"><img src="assets/icons/archive.svg" alt=""></a>
   </nav>
 </body>
 </html>
