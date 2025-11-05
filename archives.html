@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Archive — Hey, I'm Zaire</title>
-  <link rel="stylesheet" href="archive.css">
-  <link rel="icon" type="image/svg+xml" href="assets/icons/archive.svg">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zaire | Archive</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/archive.css" />
 </head>
 <body>
-  <div class="archive-container fade-in">
+  <header>
+    <a href="https://github.com/FLAX9875" id="site-link">heyzaire.github.io</a>
+    <button id="theme-toggle"><img id="theme-icon" src="assets/icons/moon.svg" alt="Theme toggle" /></button>
+  </header>
 
-    <h1 class="archive-title">Archive</h1>
-    <p class="archive-subtitle">Double-click a folder to explore</p>
+  <main class="fade-in">
+    <h1 class="digital-text">Archive</h1>
+    <p>Double-click a folder to open it.</p>
 
-    <div class="folder-grid">
+    <div class="folder-container fade-in">
       <div class="folder" data-folder="music">
-        <div class="folder-icon"></div>
-        <p>Music</p>
+        <img src="assets/icons/folder.svg" alt="Music Folder" />
+        <span>Music</span>
       </div>
-
       <div class="folder" data-folder="git">
-        <div class="folder-icon"></div>
-        <p>Git</p>
+        <img src="assets/icons/folder.svg" alt="Git Folder" />
+        <span>Git</span>
       </div>
-
       <div class="folder" data-folder="gallery">
-        <div class="folder-icon"></div>
-        <p>Gallery</p>
+        <img src="assets/icons/folder.svg" alt="Gallery Folder" />
+        <span>Gallery</span>
       </div>
     </div>
-  </div>
 
-  <div id="folder-view" class="hidden">
-    <div class="folder-content">
-      <button id="close-folder">×</button>
-      <h2 id="folder-title"></h2>
-      <p id="folder-description"></p>
+    <!-- Folder content overlay -->
+    <div class="folder-view" id="folder-view">
+      <div class="folder-inner">
+        <button id="close-folder">×</button>
+        <h2 id="folder-title"></h2>
+        <p>(Empty for now — add files later!)</p>
+      </div>
     </div>
-  </div>
+  </main>
 
-  <footer class="footer">
-    <a href="index.html"><img src="assets/icons/home.svg" alt="Home"></a>
-    <a href="blog.html"><img src="assets/icons/blog.svg" alt="Blog"></a>
-    <a href="archive.html" class="active"><img src="assets/icons/archive.svg" alt="Archive"></a>
-  </footer>
+  <nav>
+    <a href="index.html"><img src="assets/icons/home.svg" alt="Home" /></a>
+    <a href="blog.html"><img src="assets/icons/blog.svg" alt="Blog" /></a>
+    <a href="archive.html"><img src="assets/icons/archive.svg" alt="Archive" /></a>
+  </nav>
 
-  <script src="archive.js"></script>
+  <script src="scripts/script.js"></script>
+  <script src="scripts/archive.js"></script>
 </body>
 </html>
-
