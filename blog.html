@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zaire | Blog</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>blog — Zaire</title>
   <link rel="stylesheet" href="styles/style.css" />
   <link rel="stylesheet" href="styles/blog.css" />
+  <script defer src="scripts/script.js"></script>
+  <script defer src="scripts/blog.js"></script>
 </head>
 <body>
-  <header>
-    <a href="https://github.com/FLAX9875" id="site-link">heyzaire.github.io</a>
-    <button id="theme-toggle"><img id="theme-icon" src="assets/icons/moon.svg" alt="Theme toggle" /></button>
+  <header class="site-header">
+    <a class="site-link" href="https://github.com/FLAX9875" target="_blank">heyzaire.github.io</a>
+    <button id="theme-toggle" class="theme-toggle"><img id="theme-icon" src="assets/icons/moon.svg" alt="theme"></button>
   </header>
 
-  <main class="fade-in">
-    <h1 class="digital-text">Blog</h1>
-    <p>This is where Zaire writes thoughts, projects, and updates.</p>
-    <div class="blog-container fade-in">
-      <!-- You’ll add blog posts here later -->
-    </div>
+  <main class="main-content">
+    <section class="fade-in">
+      <h1 class="alive-heading">Blog</h1>
+      <p class="description">This page is empty for now — add posts in the blog container below.</p>
+
+      <div class="blog-container">
+        <!-- Add post cards / markup here later -->
+      </div>
+    </section>
   </main>
 
-  <nav>
-    <a href="index.html"><img src="assets/icons/home.svg" alt="Home" /></a>
-    <a href="blog.html"><img src="assets/icons/blog.svg" alt="Blog" /></a>
-    <a href="archive.html"><img src="assets/icons/archive.svg" alt="Archive" /></a>
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-btn"><img src="assets/icons/home.svg" alt=""></a>
+    <a href="blog.html" class="nav-btn"><img src="assets/icons/blog.svg" alt=""></a>
+    <a href="archive.html" class="nav-btn"><img src="assets/icons/archive.svg" alt=""></a>
   </nav>
-
-  <script src="scripts/script.js"></script>
-  <script src="scripts/blog.js"></script>
 </body>
 </html>
