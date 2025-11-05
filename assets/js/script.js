@@ -16,11 +16,7 @@ themeToggle.addEventListener("click", () => {
 
 // ---------------- FADE-IN ANIMATION ----------------
 const fadeElems = document.querySelectorAll(".fade-in");
-const appearOptions = {
-  threshold: 0.2,
-  rootMargin: "0px 0px -50px 0px",
-};
-
+const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
 const appearOnScroll = new IntersectionObserver((entries, observer) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
@@ -28,7 +24,19 @@ const appearOnScroll = new IntersectionObserver((entries, observer) => {
     observer.unobserve(entry.target);
   });
 }, appearOptions);
+fadeElems.forEach((el) => { appearOnScroll.observe(el); });
 
-fadeElems.forEach((el) => {
-  appearOnScroll.observe(el);
-});
+// ---------------- TYPEWRITER EFFECT ----------------
+const typeText = document.getElementById("type-text");
+if (typeText) {
+  const text = "hey, I'm Zaire";
+  let index = 0;
+  function type() {
+    if (index < text.length) {
+      typeText.textContent += text.charAt(index);
+      index++;
+      setTimeout(type, 120);
+    }
+  }
+  type();
+}
