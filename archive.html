@@ -1,38 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Archive</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>archive — Zaire</title>
+  <link rel="stylesheet" href="styles/style.css" />
   <link rel="stylesheet" href="styles/archive.css" />
+  <script defer src="scripts/script.js"></script>
   <script defer src="scripts/archive.js"></script>
 </head>
 <body>
-  <header class="navbar">
-    <a href="index.html" class="logo">heyzaire.github.io</a>
-    <nav>
-      <a href="index.html"><img src="assets/icons/home.svg"></a>
-      <a href="blog.html"><img src="assets/icons/blog.svg"></a>
-      <a href="archive.html"><img src="assets/icons/archive.svg"></a>
-    </nav>
+  <header class="site-header">
+    <a class="site-link" href="https://github.com/FLAX9875" target="_blank">heyzaire.github.io</a>
+    <button id="theme-toggle" class="theme-toggle"><img id="theme-icon" src="assets/icons/moon.svg" alt="theme"></button>
   </header>
 
-  <main class="archive-section fade-in">
-    <h1>Archive</h1>
-    <div class="folders">
-      <div class="folder" data-name="music">
-        <div class="folder-icon"></div>
-        <p>Music</p>
+  <main class="main-content">
+    <section class="fade-in archive-section">
+      <h1 class="alive-heading">Archive</h1>
+      <p class="description">Double-click a folder to open it. (Empty for now.)</p>
+
+      <div class="folders-row">
+        <div class="folder" data-key="music">
+          <img src="assets/icons/folder.svg" alt="folder" class="folder-svg">
+          <div class="folder-label">Music</div>
+        </div>
+
+        <div class="folder" data-key="git">
+          <img src="assets/icons/folder.svg" alt="folder" class="folder-svg">
+          <div class="folder-label">Git</div>
+        </div>
+
+        <div class="folder" data-key="gallery">
+          <img src="assets/icons/folder.svg" alt="folder" class="folder-svg">
+          <div class="folder-label">Gallery</div>
+        </div>
       </div>
-      <div class="folder" data-name="git">
-        <div class="folder-icon"></div>
-        <p>Git</p>
+
+      <!-- overlay -->
+      <div id="folderOverlay" class="folder-overlay" aria-hidden="true">
+        <div class="folder-panel">
+          <button id="closeOverlay" class="close-overlay" aria-label="Close">×</button>
+          <h2 id="overlayTitle"></h2>
+          <p class="description">This folder is empty for now. Add files later in the archive.</p>
+        </div>
       </div>
-      <div class="folder" data-name="gallery">
-        <div class="folder-icon"></div>
-        <p>Gallery</p>
-      </div>
-    </div>
+    </section>
   </main>
+
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-btn"><img src="assets/icons/home.svg" alt=""></a>
+    <a href="blog.html" class="nav-btn"><img src="assets/icons/blog.svg" alt=""></a>
+    <a href="archive.html" class="nav-btn"><img src="assets/icons/archive.svg" alt=""></a>
+  </nav>
 </body>
 </html>
