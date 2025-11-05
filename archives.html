@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archive — Hey, I'm Zaire</title>
+  <link rel="stylesheet" href="archive.css">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/archive.svg">
+</head>
+<body>
+  <div class="archive-container fade-in">
+
+    <h1 class="archive-title">Archive</h1>
+    <p class="archive-subtitle">Double-click a folder to explore</p>
+
+    <div class="folder-grid">
+      <div class="folder" data-folder="music">
+        <div class="folder-icon"></div>
+        <p>Music</p>
+      </div>
+
+      <div class="folder" data-folder="git">
+        <div class="folder-icon"></div>
+        <p>Git</p>
+      </div>
+
+      <div class="folder" data-folder="gallery">
+        <div class="folder-icon"></div>
+        <p>Gallery</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="folder-view" class="hidden">
+    <div class="folder-content">
+      <button id="close-folder">×</button>
+      <h2 id="folder-title"></h2>
+      <p id="folder-description"></p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <a href="index.html"><img src="assets/icons/home.svg" alt="Home"></a>
+    <a href="blog.html"><img src="assets/icons/blog.svg" alt="Blog"></a>
+    <a href="archive.html" class="active"><img src="assets/icons/archive.svg" alt="Archive"></a>
+  </footer>
+
+  <script src="archive.js"></script>
+</body>
+</html>
 
