@@ -9,73 +9,117 @@
 </head>
 <body>
     <div class="container">
-        <!-- Top left GitHub link -->
-        <a href="https://github.com/heyzaire" class="github-corner" target="_blank">heyzaire.github.io</a>
+        <!-- Navigation -->
+        <nav class="top-nav">
+            <a href="https://heyzaire.github.io" class="nav-link active" data-page="home">home</a>
+            <a href="#" class="nav-link" data-page="blog">blog</a>
+            <a href="#" class="nav-link" data-page="archives">archives</a>
+        </nav>
 
-        <!-- Main content -->
-        <main class="home-page active" id="home-page">
-            <div class="hero-section">
-                <h1 class="main-title">hey, i'm <span class="name">Zaire</span></h1>
-                <p class="description">Highschool Freshman looking to work for cybersecurity, and curious to learn more.</p>
+        <!-- Home Page -->
+        <main class="page active" id="home-page">
+            <div class="hero">
+                <h1>hey, i'm Zaire</h1>
+                <p class="subtitle">Highschool freshman looking to work for cybersecurity, and curious to learn more.</p>
                 
-                <div class="button-row">
+                <div class="social-buttons">
                     <a href="https://github.com/heyzaire" class="social-btn" target="_blank">
-                        <span class="btn-icon">[ ]</span>
+                        <span class="bracket">[</span>
                         <span class="btn-text">github</span>
+                        <span class="bracket">]</span>
                     </a>
                     <a href="#" class="social-btn" id="discord-btn">
-                        <span class="btn-icon">[ ]</span>
+                        <span class="bracket">[</span>
                         <span class="btn-text">discord</span>
+                        <span class="bracket">]</span>
                     </a>
                 </div>
 
-                <a href="#" class="blog-btn" id="read-blog-btn">
-                    <span class="blog-btn-text">Read my blog</span>
+                <a href="#" class="main-btn" id="read-blog-btn">
+                    <span class="bracket">[</span>
+                    <span class="btn-text">read my blog</span>
+                    <span class="bracket">]</span>
                 </a>
 
-                <div class="stats-row">
-                    <div class="stat-card">
-                        <div class="stat-title">Scrobbled</div>
-                        <div class="stat-value">--</div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-box">
+                            <span class="bracket">[</span>
+                            <span class="stat-type">scrobbled</span>
+                            <span class="bracket">]</span>
+                        </div>
+                        <div class="stat-value">123 plays</div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-title">Last Commit</div>
-                        <div class="stat-value" id="last-commit">--</div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-box">
+                            <span class="bracket">[</span>
+                            <span class="stat-type">last commit</span>
+                            <span class="bracket">]</span>
+                        </div>
+                        <div class="stat-value">updated portfolio</div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-title">Latest Post</div>
-                        <div class="stat-value" id="latest-post">--</div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-box">
+                            <span class="bracket">[</span>
+                            <span class="stat-type">latest post</span>
+                            <span class="bracket">]</span>
+                        </div>
+                        <div class="stat-value">getting started with cybersecurity</div>
                     </div>
                 </div>
             </div>
         </main>
 
-        <!-- Blog Page (hidden initially) -->
-        <main class="blog-page" id="blog-page">
-            <div class="blog-content">
+        <!-- Blog Page -->
+        <main class="page" id="blog-page">
+            <div class="blog-header">
                 <h2>Blog Posts</h2>
-                <div class="blog-posts" id="blog-posts-container">
-                    <!-- Blog posts will be loaded here -->
-                </div>
+            </div>
+            
+            <div class="blog-posts">
+                <article class="blog-post">
+                    <h3>Getting Started with Cybersecurity</h3>
+                    <div class="post-date">2024-03-14</div>
+                    <p>My journey into cybersecurity and essential resources for beginners.</p>
+                </article>
+
+                <article class="blog-post">
+                    <h3>Setting Up My First Homelab</h3>
+                    <div class="post-date">2024-02-09</div>
+                    <p>How I built my homelab to practice networking and security concepts.</p>
+                </article>
+
+                <article class="blog-post">
+                    <h3>Python for Security Automation</h3>
+                    <div class="post-date">2024-03-04</div>
+                    <p>Using Python scripts to automate basic security tasks and analysis.</p>
+                </article>
             </div>
         </main>
 
-        <!-- Archives Page (hidden initially) -->
-        <main class="archives-page" id="archives-page">
-            <div class="archives-content">
+        <!-- Archives Page -->
+        <main class="page" id="archives-page">
+            <div class="archives-header">
                 <h2>Archives</h2>
-                <div class="archives-list" id="archives-container">
-                    <!-- Archives will be loaded here -->
+            </div>
+            
+            <div class="archives-list">
+                <div class="archive-item">
+                    <span class="archive-month">March 2024</span>
+                    <span class="archive-count">(2 posts)</span>
+                </div>
+                <div class="archive-item">
+                    <span class="archive-month">February 2024</span>
+                    <span class="archive-count">(1 post)</span>
+                </div>
+                <div class="archive-item">
+                    <span class="archive-month">January 2024</span>
+                    <span class="archive-count">(3 posts)</span>
                 </div>
             </div>
         </main>
-
-        <!-- Bottom Navigation -->
-        <nav class="bottom-nav">
-            <button class="nav-btn active" data-page="home">Home</button>
-            <button class="nav-btn" data-page="blog">Blog</button>
-            <button class="nav-btn" data-page="archives">Archives</button>
-        </nav>
     </div>
 
     <!-- Discord Modal -->
