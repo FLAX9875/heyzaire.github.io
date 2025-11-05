@@ -1,130 +1,209 @@
-// Sample blog posts data - you can replace this with dynamic content
-const blogPosts = [
-    {
-        title: "Getting Started with Web Development",
-        description: "My journey into the world of coding and how I built my first website.",
-        date: "2024-01-15",
-        link: "#"
-    },
-    {
-        title: "Why I Love Open Source",
-        description: "The beauty of contributing to open source projects and learning from the community.",
-        date: "2024-01-10",
-        link: "#"
-    },
-    {
-        title: "Building My Portfolio",
-        description: "The process of creating this very website and what I learned along the way.",
-        date: "2024-01-05",
-        link: "#"
+// DOM Elements
+const homePage = document.getElementById('home-page');
+const blogPage = document.getElementById('blog-page');
+const archivesPage = document.getElementById('archives-page');
+const navButtons = document.querySelectorAll('.nav-btn');
+const discordBtn = document.getElementById('discord-btn');
+const readBlogBtn = document.getElementById('read-blog-btn');
+const discordModal = document.getElementById('discord-modal');
+const closeModal = document.querySelector('.close');
+const copyDiscordBtn = document.getElementById('copy-discord');
+
+// Sample data - replace with your actual data
+const sampleData = {
+    lastCommit: "Updated portfolio",
+    latestPost: "Getting Started with Cybersecurity",
+    scrobbled: "125 plays"
+};
+
+// Initialize the page
+function init() {
+    // Set sample data
+    document.getElementById('last-commit').textContent = sampleData.lastCommit;
+    document.getElementById('latest-post').textContent = sampleData.latestPost;
+    document.querySelector('.stat-card .stat-value').textContent = sampleData.scrobbled;
+    
+    // Set up event listeners
+    setupEventListeners();
+}
+
+// Set up all event listeners
+function setupEventListeners() {
+    // Navigation
+    navButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const page = button.getAttribute('data-page');
+            switchPage(page);
+            
+            // Update active states
+            navButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+        });
+    });
+    
+    // Discord button
+    discordBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        discordModal.style.display = 'block';
+    });
+    
+    // Read blog button
+    readBlogBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        switchPage('blog');
+        navButtons.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-page') === 'blog') {
+                btn.classList.add('active');
+            }
+        });
+    });
+    
+    // Modal close
+    closeModal.addEventListener('click', () => {
+        discordModal.style.display = 'none';
+    });
+    
+    // Copy Discord username
+    copyDiscordBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText('zaire#0000').then(() => {
+            const originalText = copyDiscordBtn.textContent;
+            copyDiscordBtn.textContent = 'Copied!';
+            setTimeout(() => {
+                copyDiscordBtn.textContent = originalText;
+            }, 2000);
+        });
+    });
+    
+    // Close modal when clicking outside
+    window.addEventListener('click', (e) => {
+        if (e.target === discordModal) {
+            discordModal.style.display = 'none';
+        }
+    });
+}
+
+// Switch between pages
+function switchPage(page) {
+    // Hide all pages
+    homePage.classList.remove('active');
+    blogPage.classList.remove('active');
+    archivesPage.classList.remove('active');
+    
+    // Show selected page
+    switch(page) {
+        case 'home':
+            homePage.classList.add('active');
+            break;
+        case 'blog':
+            blogPage.classList.add('active');
+            loadBlogPosts();
+            break;
+        case 'archives':
+            archivesPage.classList.add('active');
+            loadArchives();
+            break;
     }
-];
+}
 
-// Sample projects data
-const projects = [
-    {
-        title: "Portfolio Website",
-        description: "This responsive portfolio website built with HTML, CSS, and JavaScript.",
-        technologies: ["HTML", "CSS", "JavaScript"],
-        link: "#",
-        github: "https://github.com/yourusername/zaire-portfolio"
-    },
-    {
-        title: "Task Management App",
-        description: "A full-stack task management application with user authentication.",
-        technologies: ["React", "Node.js", "MongoDB"],
-        link: "#",
-        github: "https://github.com/yourusername/task-app"
-    },
-    {
-        title: "Weather Dashboard",
-        description: "Real-time weather information dashboard with location-based services.",
-        technologies: ["JavaScript", "API", "CSS"],
-        link: "#",
-        github: "https://github.com/yourusername/weather-dashboard"
-    }
-];
-
-// DOM elements
-const blogLink = document.getElementById('blog-link');
-const projectsLink = document.getElementById('projects-link');
-const blogPostsSection = document.getElementById('blog-posts');
-const projectsSection = document.getElementById('projects');
-const postsContainer = document.getElementById('posts-container');
-const projectsContainer = document.getElementById('projects-container');
-
-// Load blog posts
+// Load blog posts (sample data)
 function loadBlogPosts() {
-    postsContainer.innerHTML = '';
-    blogPosts.forEach(post => {
-        const postElement = document.createElement('div');
-        postElement.className = 'post-item';
-        postElement.innerHTML = `
+    const postsContainer = document.getElementById('blog-posts-container');
+    const samplePosts = [
+        {
+            title: "Getting Started with Cybersecurity",
+            date: "2024-01-15",
+            excerpt: "My journey into cybersecurity and essential resources for beginners."
+        },
+        {
+            title: "Setting Up My First Homelab",
+            date: "2024-01-10",
+            excerpt: "How I built my homelab to practice networking and security concepts."
+        },
+        {
+            title: "Python for Security Automation",
+            date: "2024-01-05",
+            excerpt: "Using Python scripts to automate basic security tasks and analysis."
+        }
+    ];
+    
+    postsContainer.innerHTML = samplePosts.map(post => `
+        <div class="blog-post">
             <h3>${post.title}</h3>
-            <p>${post.description}</p>
             <small>${new Date(post.date).toLocaleDateString()}</small>
-        `;
-        postElement.addEventListener('click', () => {
-            // You can add functionality to show full post
-            alert(`Opening: ${post.title}`);
-        });
-        postsContainer.appendChild(postElement);
-    });
+            <p>${post.excerpt}</p>
+        </div>
+    `).join('');
 }
 
-// Load projects
-function loadProjects() {
-    projectsContainer.innerHTML = '';
-    projects.forEach(project => {
-        const projectElement = document.createElement('div');
-        projectElement.className = 'project-item';
-        projectElement.innerHTML = `
-            <h3>${project.title}</h3>
-            <p>${project.description}</p>
-            <div class="tech-tags">
-                ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
-            </div>
-        `;
-        projectElement.addEventListener('click', () => {
-            window.open(project.github, '_blank');
-        });
-        projectsContainer.appendChild(projectElement);
-    });
+// Load archives (sample data)
+function loadArchives() {
+    const archivesContainer = document.getElementById('archives-container');
+    const sampleArchives = [
+        { month: "January 2024", count: 3 },
+        { month: "December 2023", count: 5 },
+        { month: "November 2023", count: 2 }
+    ];
+    
+    archivesContainer.innerHTML = sampleArchives.map(archive => `
+        <div class="archive-item">
+            <span>${archive.month}</span>
+            <span>(${archive.count} posts)</span>
+        </div>
+    `).join('');
 }
 
-// Event listeners
-blogLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    blogPostsSection.style.display = 'block';
-    projectsSection.style.display = 'none';
-    loadBlogPosts();
-});
-
-projectsLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    projectsSection.style.display = 'block';
-    blogPostsSection.style.display = 'none';
-    loadProjects();
-});
-
-// Add some CSS for tech tags
-const style = document.createElement('style');
-style.textContent = `
-    .tech-tags {
+// Add some CSS for blog and archive items
+const additionalStyles = `
+    .blog-post {
+        background: #1a1a1a;
+        border: 1px solid #333;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        transition: all 0.3s ease;
+    }
+    
+    .blog-post:hover {
+        border-color: #667eea;
+        transform: translateX(5px);
+    }
+    
+    .blog-post h3 {
+        color: #ffffff;
+        margin-bottom: 0.5rem;
+    }
+    
+    .blog-post small {
+        color: #b0b0b0;
+    }
+    
+    .blog-post p {
+        color: #e0e0e0;
         margin-top: 0.5rem;
     }
     
-    .tech-tag {
-        display: inline-block;
-        background: #667eea;
-        color: white;
-        padding: 0.2rem 0.5rem;
-        border-radius: 12px;
-        font-size: 0.8rem;
-        margin-right: 0.3rem;
+    .archive-item {
+        display: flex;
+        justify-content: space-between;
+        background: #1a1a1a;
+        border: 1px solid #333;
+        border-radius: 8px;
+        padding: 1rem 1.5rem;
+        margin-bottom: 0.5rem;
+        transition: all 0.3s ease;
+    }
+    
+    .archive-item:hover {
+        border-color: #667eea;
+        transform: translateX(5px);
     }
 `;
-document.head.appendChild(style);
 
-// Initialize
-console.log('Zaire Portfolio loaded successfully!');
+// Inject additional styles
+const styleSheet = document.createElement('style');
+styleSheet.textContent = additionalStyles;
+document.head.appendChild(styleSheet);
+
+// Initialize the application when DOM is loaded
+document.addEventListener('DOMContentLoaded', init);
