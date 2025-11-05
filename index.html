@@ -1,137 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zaire</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>hey, i'm zaire</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-    <div class="container">
-        <!-- Navigation -->
-        <nav class="top-nav">
-            <a href="https://heyzaire.github.io" class="nav-link active" data-page="home">home</a>
-            <a href="#" class="nav-link" data-page="blog">blog</a>
-            <a href="#" class="nav-link" data-page="archives">archives</a>
-        </nav>
+  <header>
+    <a href="https://heyzaire.github.io" class="site-link">heyzaire.github.io</a>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+      <img id="theme-icon" src="assets/icons/moon.svg" alt="Toggle theme" />
+    </button>
+  </header>
 
-        <!-- Home Page -->
-        <main class="page active" id="home-page">
-            <div class="hero">
-                <h1>hey, i'm Zaire</h1>
-                <p class="subtitle">Highschool freshman looking to work for cybersecurity, and curious to learn more.</p>
-                
-                <div class="social-buttons">
-                    <a href="https://github.com/heyzaire" class="social-btn" target="_blank">
-                        <span class="bracket">[</span>
-                        <span class="btn-text">github</span>
-                        <span class="bracket">]</span>
-                    </a>
-                    <a href="#" class="social-btn" id="discord-btn">
-                        <span class="bracket">[</span>
-                        <span class="btn-text">discord</span>
-                        <span class="bracket">]</span>
-                    </a>
-                </div>
+  <main class="fade-in">
+    <h1>hey, i’m zaire</h1>
+    <p>Highschool Freshman looking to work for cybersecurity, and curious to learn more.</p>
 
-                <a href="#" class="main-btn" id="read-blog-btn">
-                    <span class="bracket">[</span>
-                    <span class="btn-text">read my blog</span>
-                    <span class="bracket">]</span>
-                </a>
-
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-box">
-                            <span class="bracket">[</span>
-                            <span class="stat-type">scrobbled</span>
-                            <span class="bracket">]</span>
-                        </div>
-                        <div class="stat-value">123 plays</div>
-                    </div>
-                    
-                    <div class="stat-item">
-                        <div class="stat-box">
-                            <span class="bracket">[</span>
-                            <span class="stat-type">last commit</span>
-                            <span class="bracket">]</span>
-                        </div>
-                        <div class="stat-value">updated portfolio</div>
-                    </div>
-                    
-                    <div class="stat-item">
-                        <div class="stat-box">
-                            <span class="bracket">[</span>
-                            <span class="stat-type">latest post</span>
-                            <span class="bracket">]</span>
-                        </div>
-                        <div class="stat-value">getting started with cybersecurity</div>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <!-- Blog Page -->
-        <main class="page" id="blog-page">
-            <div class="blog-header">
-                <h2>Blog Posts</h2>
-            </div>
-            
-            <div class="blog-posts">
-                <article class="blog-post">
-                    <h3>Getting Started with Cybersecurity</h3>
-                    <div class="post-date">2024-03-14</div>
-                    <p>My journey into cybersecurity and essential resources for beginners.</p>
-                </article>
-
-                <article class="blog-post">
-                    <h3>Setting Up My First Homelab</h3>
-                    <div class="post-date">2024-02-09</div>
-                    <p>How I built my homelab to practice networking and security concepts.</p>
-                </article>
-
-                <article class="blog-post">
-                    <h3>Python for Security Automation</h3>
-                    <div class="post-date">2024-03-04</div>
-                    <p>Using Python scripts to automate basic security tasks and analysis.</p>
-                </article>
-            </div>
-        </main>
-
-        <!-- Archives Page -->
-        <main class="page" id="archives-page">
-            <div class="archives-header">
-                <h2>Archives</h2>
-            </div>
-            
-            <div class="archives-list">
-                <div class="archive-item">
-                    <span class="archive-month">March 2024</span>
-                    <span class="archive-count">(2 posts)</span>
-                </div>
-                <div class="archive-item">
-                    <span class="archive-month">February 2024</span>
-                    <span class="archive-count">(1 post)</span>
-                </div>
-                <div class="archive-item">
-                    <span class="archive-month">January 2024</span>
-                    <span class="archive-count">(3 posts)</span>
-                </div>
-            </div>
-        </main>
+    <div class="btn-row">
+      <a href="https://github.com/heyzaire" class="btn">github</a>
+      <a href="#" class="btn">discord</a>
     </div>
 
-    <!-- Discord Modal -->
-    <div class="modal" id="discord-modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>Discord</h3>
-            <p>Add me on Discord: <strong>zaire#0000</strong></p>
-            <button class="copy-btn" id="copy-discord">Copy Username</button>
-        </div>
-    </div>
+    <a href="blog.html" class="read-btn">read my blog →</a>
 
-    <script src="script.js"></script>
+    <div class="info-section fade-in">
+      <div class="info-box">
+        SCROBBLED
+        <span>loading track...</span>
+      </div>
+      <div class="info-box">
+        LAST COMMIT
+        <span>coming soon</span>
+      </div>
+      <div class="info-box">
+        LATEST POST
+        <span>no posts yet</span>
+      </div>
+    </div>
+  </main>
+
+  <footer class="fade-in">
+    <a href="index.html">🏠 Home</a>
+    <a href="blog.html">📝 Blog</a>
+    <a href="archives.html">📂 Archives</a>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
